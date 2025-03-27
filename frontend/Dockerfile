@@ -1,17 +1,19 @@
 # Usa una imagen base con Python
-FROM python:3.11
+FROM python:3.11-slim
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copia los archivos del frontend al contenedor
+# Copia todos los archivos al contenedor
 COPY . .
 
-# Instala UV y las dependencias del proyecto
-RUN pip install uv && uv pip install 
+# Instala dependencias desde pyproject.toml
+RUN pip install --upgrade pip \
+    && pip install .
 
-# Expone el puerto en el que se ejecuta Chainlit
+# Expone el puerto de Chainlit
 EXPOSE 8000
 
 # Comando para iniciar Chainlit
-CMD ["uv", "run", "chainlit", "run", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["chainlit", "run", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+
