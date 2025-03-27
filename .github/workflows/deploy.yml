@@ -78,8 +78,9 @@ jobs:
             --image ollama/ollama \
             --target-port 11434 \
             --ingress external \
-            --startup-command "/bin/sh" \
-            --startup-args "-c", "ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null"
+            --command "/bin/sh" \
+            --args '["-c", "ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null"]'
+
 
 
 
