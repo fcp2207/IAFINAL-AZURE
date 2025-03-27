@@ -1,0 +1,71 @@
+name: Deploy to Azure Container Apps
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ACR_NAME: iafinalacr
+  RESOURCE_GROUP: Microproyecto_3
+  CONTAINER_ENV: iafinal-env
+  LOCATION: eastus
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and push backend image
+        run: |
+          az acr build --registry $ACR_NAME --image backend:latest ./backend
+
+      - name: Build and push frontend image
+        run: |
+          az acr build --registry $ACR_NAME --image frontend:latest ./frontend
+
+      - name: Deploy backend app
+        run: |
+          az containerapp create \
+            --name ia-backend \
+            --resource-group $RESOURCE_GROUP \
+            --environment $CONTAINER_ENV \
+            --image $ACR_NAME.azurecr.io/backend:latest \
+            --target-port 8080 \
+            --ingress 'external' \
+            --env-vars OLLAMA_HOST=http://ia-ollama:11434 \
+            --registry-server $ACR_NAME.azurecr.io \
+            --registry-username $(az acr credential show -n $ACR_NAME --query username -o tsv) \
+            --registry-password $(az acr credential show -n $ACR_NAME --query passwords[0].value -o tsv)
+
+      - name: Deploy frontend app
+        run: |
+          az containerapp create \
+            --name ia-frontend \
+            --resource-group $RESOURCE_GROUP \
+            --environment $CONTAINER_ENV \
+            --image $ACR_NAME.azurecr.io/frontend:latest \
+            --target-port 8000 \
+            --ingress 'external' \
+            --registry-server $ACR_NAME.azurecr.io \
+            --registry-username $(az acr credential show -n $ACR_NAME --query username -o tsv) \
+            --registry-password $(az acr credential show -n $ACR_NAME --query passwords[0].value -o tsv)
+
+      - name: Deploy ollama app
+        run: |
+          az containerapp create \
+            --name ia-ollama \
+            --resource-group $RESOURCE_GROUP \
+            --environment $CONTAINER_ENV \
+            --image ollama/ollama \
+            --target-port 11434 \
+            --ingress 'external' \
+            --startup-command "/bin/sh -c 'ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null'"
