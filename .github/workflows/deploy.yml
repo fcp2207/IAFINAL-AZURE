@@ -71,13 +71,15 @@ jobs:
 
       - name: Deploy ollama app
         run: |
-          az containerapp up \
+          az containerapp create \
             --name ia-ollama \
             --resource-group $RESOURCE_GROUP \
             --environment $CONTAINER_ENV \
             --image ollama/ollama \
             --target-port 11434 \
             --ingress external \
-            --startup-command "/bin/sh -c 'ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null'"
+            --startup-command "/bin/sh" \
+            --startup-args "-c", "ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null"
+
 
 
