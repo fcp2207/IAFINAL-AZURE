@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama  # Imagen oficial de Ollama
+    container_name: ollama_container
+    restart: always
+    ports:
+      - "11434:11434"  # Puerto de Ollama
+    volumes:
+      - ollama_data:/root/.ollama  # Persistencia de modelos
+    entrypoint: ["/bin/sh", "-c"]  
+    command:
+      - |
+        ollama serve &  # Inicia Ollama en segundo plano
+        sleep 5  # Espera un poco para asegurar que el servidor esté activo
+        ollama pull mistral:latest  # Descarga el modelo si no está disponible
+        tail -f /dev/null  # Mantiene el contenedor activo
+
+  backend:
+    build: ./backend
+    container_name: backend_container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_container
+    ports:
+      - "8000:8000"  # Exponer el puerto de Chainlit
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+
+
+
+volumes:
+  ollama_data:

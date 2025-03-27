@@ -1,0 +1,160 @@
+{
+    "archivo": "F41641223.pdf",
+    "fecha": {
+        "informe": "2023-12-07",
+        "ingreso": "2023-11-02",
+        "entrega": "2023-12-04"
+    },
+    "empresa": "AMCOR FLEXIBLES CALI SAS",
+    "orden": {
+        "produccion": "F4164",
+        "cliente": "900483014"
+    },
+    "equipo": {
+        "nombre": "BLOWER",
+        "datos_placa": {
+            "marca": "N.I",
+            "potencia_kw": 0.30,
+            "serie": "N.I",
+            "tension_v": "220-440",
+            "corriente_a": "1.4-0.7",
+            "frame": "N.I",
+            "maquina": "COEXTRUSORA MACCHI",
+            "identificacion": "F4164"
+        }
+    },
+    "servicio": {
+        "tipo": "Reparacion-Bobinado",
+        "trabajos_realizados": [
+            "Desarmado",
+            "Rebobinado de estator (aislamiento clase H 180°C)",
+            "Pruebas electricas (Baker a estator)",
+            "Revisión de ajustes/tolerancias (eje y escudos)",
+            "Armado de motor y pruebas finales",
+            "Rodamientos REF: 6000 2RS C3 (SKF)",
+            "Balanceo dinámico"
+        ]
+    },
+    "tipo_falla": {
+        "descripcion": "Sobrecarga",
+        "recomendaciones": [
+            "Verificación de carga en motor (Explorer 4000)",
+            "Balanceo de voltajes/corrientes y carga de funcionamiento"
+        ],
+        "repuestos": [
+            "Rodamientos REF: 6000 2RS C3 (SKF)"
+        ]
+    },
+    "pruebas_realizadas": {
+        "electricas": {
+            "aislamiento_tierra": {
+                "tension_prueba_v": 500,
+                "resistencia_aislamiento_gohm": 7.5,
+                "rangos_minimos": {
+                    "redondo_mohm": 5,
+                    "rectangular_mohm": 100
+                }
+            },
+            "prueba_alta_tension": {
+                "tension_prueba_v": 2050,
+                "resultado": "Pasó"
+            },
+            "prueba_impulso": {
+                "tension_prueba_v": 1850,
+                "fase_i": "OK",
+                "fase_ii": "OK",
+                "fase_iii": "OK"
+            },
+            "pruebas_vacio": {
+                "fase_i_tension_v": 447,
+                "fase_ii_tension_v": 445,
+                "fase_iii_tension_v": 453,
+                "fase_i_corriente_a": 0.5,
+                "fase_ii_corriente_a": 0.4,
+                "fase_iii_corriente_a": 0.5,
+                "velocidad_rpm": 3600
+            }
+        },
+        "mecanicas": {
+            "analisis_vibracion": "Ultraspect 8000",
+            "ajuste_alojamientos": {
+                "ventilador": {
+                    "diametro_mm": 26,
+                    "ajuste_final_mm": 0.01,
+                    "rango_mm": "0.00-0.027"
+                },
+                "acople": {
+                    "diametro_mm": 26,
+                    "ajuste_final_mm": 0.01,
+                    "rango_mm": "0.00-0.027"
+                },
+                "eje_lc": {
+                    "diametro_mm": 10,
+                    "ajuste_final_mm": 0.00,
+                    "rango_mm": "0.00-0.03"
+                }
+            },
+            "tipo_grasa": "N/A"
+        }
+    },
+    "recomendaciones_generales": [
+        "Motores con rodamientos cilíndricos deben probarse con mínimo 4% de carga",
+        "Revisar instalación eléctrica para evitar defectos",
+        "Verificar conformidad del sistema de protección",
+        "Realizar prueba de aislamiento a tierra con Megger",
+        "Asegurar correcta conexión al sistema de aterrizaje",
+        "Alinear el equipo con láser",
+        "Verificar dirección de giro y lubricación tras energizar"
+    ],
+    "declaracion_conformidad": {
+        "orden_produccion": "F4164",
+        "pruebas_realizadas_por": "JIMENEZ CAMILO LUIS ADOLFO",
+        "matricula_profesional": "94519543",
+        "cumplimiento_normas": [
+            "EASA AR-100 2015",
+            "IEEE 43 2013",
+            "NEMA STD MG1 2014",
+            "RETIE 2013 numeral 20.21",
+            "IEC 60034-5"
+        ],
+        "firma_fecha": "Cali, 12 de diciembre de 2023"
+    },
+    "palabras_clave": [
+        "falla",
+        "sobrecarga",
+        "mantenimiento",
+        "reparacion",
+        "bobinado",
+        "motor",
+        "equipo",
+        "potencia",
+        "pruebas electricas",
+        "aislamiento",
+        "resistencia",
+        "temperatura",
+        "seguridad",
+        "voltaje",
+        "corriente",
+        "rodamiento",
+        "balanceo",
+        "alineacion",
+        "diagnostico",
+        "prueba de impulso",
+        "alto voltaje",
+        "revision",
+        "ajustes",
+        "tolerancia",
+        "lubricacion",
+        "proteccion electrica",
+        "repuestos",
+        "desgaste",
+        "daño",
+        "prevencion",
+        "vibraciones",
+        "frecuencia",
+        "megger",
+        "inspeccion",
+        "falla electrica",
+        "riesgo electrico"
+    ]
+}

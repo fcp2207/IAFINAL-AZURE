@@ -1,0 +1,267 @@
+{
+    "archivo": "F41641223.pdf",
+    "fecha_informe": "2023-12-07",
+    "orden_produccion": "F4164",
+    "fecha_ingreso": "2023-11-02",
+    "empresa": "AMCOR FLEXIBLES CALI SAS",
+    "orden_cliente": "900483014",
+    "fecha_entrega": "2023-12-04",
+    "equipo": "BLOWER, datos_placa: marca: N.I, potencia: 0.30 KW, frecuencia_hz: 60, rpm: 2800, fases: 3, serie: N.I, tension: 220 - 440 V, ip: 0, corriente: 1.4 - 0.7 Amp, frame: N.I, maquina: COEXTRUSORA MACCHI, identificacion: F4164",
+    "servicio": "Reparación - Bobinado, trabajo_realizado: Desarmado, Rebobinado de estator en aislamiento clase H 180 grados, Pruebas eléctricas con equipo Baker a estator, Revisión de ajustes y tolerancias en eje y escudos, Armado de motor y pruebas finales, Embujo de escudo L.C. y L.V., Rodamientos REF: 6000 2RS C3 marca SKF, Balanceo dinámico en conjunto",
+    "tipo_falla": "Sobrecarga, recomendaciones: Realizar verificación de la carga en el motor mediante rutas de Explorer 4000, Verificar carga de funcionamiento, balanceo de voltajes, corrientes, etc., repuestos: Rodamientos REF: 6000 2RS C3 marca SKF",
+    "pruebas_realizadas": {
+        "electricas": {
+            "aislamiento_tierra": {
+                "tension_prueba": "500 Vdc",
+                "resistencia_aislamiento": "7.5 GΩ",
+                "rangos": {
+                    "minimo_redondo": "5MΩ",
+                    "minimo_rectangular": "100MΩ"
+                }
+            },
+            "prueba_alta_tension": {
+                "tension_prueba": "2050 Vdc",
+                "resultado": "Pasó"
+            },
+            "prueba_impulso": {
+                "tension_prueba": "1850 Vdc",
+                "fase_i": "OK",
+                "fase_ii": "OK",
+                "fase_iii": "OK"
+            },
+            "pruebas_vacio": {
+                "fase_i_tension": 447,
+                "fase_ii_tension": 445,
+                "fase_iii_tension": 453,
+                "fase_i_corriente": 0.5,
+                "fase_ii_corriente": 0.4,
+                "fase_iii_corriente": 0.5,
+                "velocidad_prueba_rpm": 3600
+            }
+        },
+        "mecanicas": {
+            "analisis_vibracion": "Equipo Ultraspect 8000",
+            "ajuste_alojamientos": {
+                "lado_ventilador": {
+                    "diametro": 26,
+                    "ajuste_final": "+0.01",
+                    "rango": "0.00/0.027"
+                },
+                "lado_acople": {
+                    "diametro": 26,
+                    "ajuste_final": "+0.01",
+                    "rango": "0.00/0.027"
+                },
+                "eje_lc": {
+                    "diametro": 10,
+                    "ajuste_final": "0.00",
+                    "rango": "0.00/0.03"
+                }
+            },
+            "tipo_grasa": "N/A"
+        },
+        "verificacion_temperatura": {
+            "rod_lc": "28 °C",
+            "carcasa": "29 °C",
+            "rod_lv": "N/A",
+            "max_temperatura_motores_bajos_rpm": {
+                "estator": "<50°C",
+                "escudo": "<45°C",
+                "eje": "<55°C"
+            },
+            "max_temperatura_motores_altos_rpm": {
+                "estator": "<60°C",
+                "escudo": "<65°C",
+                "eje": "<55°C"
+            }
+        },
+        "indice_polarizacion": {
+            "minimo_ip": "< 1.0 (Peligroso)",
+            "regular": "1.0 - 1.5",
+            "cuestionable": "1.5 - 2.0",
+            "bueno": "> 2.0 - 4.0"
+        }
+    },
+    "verificacion_placa_datos": "Cumple con las especificaciones de la placa características.",
+    "recomendaciones_generales": [
+        "Motores con rodamientos cilíndricos rodillos se deben probar con al menos 4% de carga.",
+        "Revise que la instalación eléctrica no sea defectuosa o inadecuada.",
+        "Verifique que el sistema de protección sea conforme con el equipo.",
+        "Realice una prueba de aislamiento a tierra con Megger.",
+        "Asegúrese de que la conexión al sistema de aterrizaje esté correcta por seguridad.",
+        "Realice un correcto anclaje y alineación del equipo con láser.",
+        "Después de energizar, verifique la dirección del giro y lubricación adecuada."
+    ],
+    "almacenamiento": {
+        "recomendaciones": [
+            "Si el motor se almacena, debe estar en un lugar seco y libre de humedad.",
+            "Rote el eje al menos una vez al mes para mantener el lubricante."
+        ]
+    },
+    "declaracion_conformidad": {
+        "orden_produccion": "F4164",
+        "pruebas_realizadas_por": "JIMENEZ CAMILO LUIS ADOLFO",
+        "matricula_profesional": "94519543",
+        "cumplimiento_normas": [
+            "EASA AR-100 2015",
+            "IEEE 43 2013",
+            "NEMA STD MG1 2014",
+            "RETIE 2013 numeral 20.21",
+            "IEC 60034-5"
+        ],
+        "firma_fecha": "Cali, 12 de diciembre de 2023"
+    }
+}
+
+
+----------------------------------------
+
+{
+    "archivo": "F41641223.pdf",
+    "fecha": {
+        "informe": "2023-12-07",
+        "ingreso": "2023-11-02",
+        "entrega": "2023-12-04"
+    },
+    "empresa": "AMCOR FLEXIBLES CALI SAS",
+    "orden": {
+        "produccion": "F4164",
+        "cliente": "900483014"
+    },
+    "equipo": {
+        "nombre": "BLOWER",
+        "datos_placa": {
+            "marca": "N.I",
+            "potencia_kw": "0.30 KW",
+            "serie": "N.I",
+            "tension_v": "220 - 440 V",
+            "corriente_a": "1.4 - 0.7 Amp",
+            "frame": "N.I",
+            "maquina": "COEXTRUSORA MACCHI",
+            "identificacion": "F4164"
+        }
+    },
+    "servicio": {
+        "tipo": "Reparación - Bobinado",
+        "trabajos_realizados": [
+            "Desarmado",
+            "Rebobinado de estator en aislamiento clase H 180 grados",
+            "Pruebas eléctricas con equipo Baker a estator",
+            "Revisión de ajustes y tolerancias en eje y escudos",
+            "Armado de motor y pruebas finales",
+            "Rodamientos REF: 6000 2RS C3 marca SKF",
+            "Balanceo dinámico en conjunto"
+        ]
+    },
+    "tipo_falla": {
+        "descripcion": "Sobrecarga",
+        "recomendaciones": [
+            "Realizar verificación de la carga en el motor mediante rutas de Explorer 4000",
+            "Verificar carga de funcionamiento, balanceo de voltajes, corrientes, etc."
+        ],
+        "repuestos": [
+            "Rodamientos REF: 6000 2RS C3 marca SKF"
+        ]
+    },
+    "pruebas_realizadas": {
+        "electricas": {
+            "aislamiento_tierra": {
+                "tension_prueba": "500 Vdc",
+                "resistencia_aislamiento": "7.5 GΩ",
+                "rangos": {
+                    "minimo_redondo": "5MΩ",
+                    "minimo_rectangular": "100MΩ"
+                }
+            },
+            "prueba_alta_tension": {
+                "tension_prueba": "2050 Vdc",
+                "resultado": "Pasó"
+            },
+            "prueba_impulso": {
+                "tension_prueba": "1850 Vdc",
+                "fase_i": "OK",
+                "fase_ii": "OK",
+                "fase_iii": "OK"
+            },
+            "pruebas_vacio": {
+                "fase_i_tension": 447,
+                "fase_ii_tension": 445,
+                "fase_iii_tension": 453,
+                "fase_i_corriente": 0.5,
+                "fase_ii_corriente": 0.4,
+                "fase_iii_corriente": 0.5,
+                "velocidad_prueba_rpm": 3600
+            }
+        },
+        "mecanicas": {
+            "analisis_vibracion": "Equipo Ultraspect 8000",
+            "ajuste_alojamientos": {
+                "lado_ventilador": {
+                    "diametro": 26,
+                    "ajuste_final": "+0.01",
+                    "rango": "0.00/0.027"
+                },
+                "lado_acople": {
+                    "diametro": 26,
+                    "ajuste_final": "+0.01",
+                    "rango": "0.00/0.027"
+                },
+                "eje_lc": {
+                    "diametro": 10,
+                    "ajuste_final": "0.00",
+                    "rango": "0.00/0.03"
+                }
+            },
+            "tipo_grasa": "N/A"
+        },
+        "verificacion_temperatura": {
+            "rod_lc": "28 °C",
+            "carcasa": "29 °C",
+            "rod_lv": "N/A",
+            "max_temperatura_motores_bajos_rpm": {
+                "estator": "<50°C",
+                "escudo": "<45°C",
+                "eje": "<55°C"
+            },
+            "max_temperatura_motores_altos_rpm": {
+                "estator": "<60°C",
+                "escudo": "<65°C",
+                "eje": "<55°C"
+            }
+        },
+        "indice_polarizacion": {
+            "minimo_ip": "< 1.0 (Peligroso)",
+            "regular": "1.0 - 1.5",
+            "cuestionable": "1.5 - 2.0",
+            "bueno": "> 2.0 - 4.0"
+        }
+    },
+    "recomendaciones_generales": [
+        "Motores con rodamientos cilíndricos rodillos se deben probar con al menos 4% de carga.",
+        "Revise que la instalación eléctrica no sea defectuosa o inadecuada.",
+        "Verifique que el sistema de protección sea conforme con el equipo.",
+        "Realice una prueba de aislamiento a tierra con Megger.",
+        "Asegúrese de que la conexión al sistema de aterrizaje esté correcta por seguridad.",
+        "Realice un correcto anclaje y alineación del equipo con láser.",
+        "Después de energizar, verifique la dirección del giro y lubricación adecuada."
+    ],
+    "almacenamiento": {
+        "recomendaciones": [
+            "Si el motor se almacena, debe estar en un lugar seco y libre de humedad.",
+            "Rote el eje al menos una vez al mes para mantener el lubricante."
+        ]
+    },
+    "declaracion_conformidad": {
+        "orden_produccion": "F4164",
+        "pruebas_realizadas_por": "JIMENEZ CAMILO LUIS ADOLFO",
+        "matricula_profesional": "94519543",
+        "cumplimiento_normas": [
+            "EASA AR-100 2015",
+            "IEEE 43 2013",
+            "NEMA STD MG1 2014",
+            "RETIE 2013 numeral 20.21",
+            "IEC 60034-5"
+        ],
+        "firma_fecha": "Cali, 12 de diciembre de 2023"
+    }
+}
