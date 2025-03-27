@@ -52,7 +52,9 @@ jobs:
             --target-port 8080 \
             --ingress external \
             --env-vars OLLAMA_HOST=http://ia-ollama:11434 \
-            --registry-server $ACR_NAME.azurecr.io
+            --registry-server $ACR_NAME.azurecr.io \
+            --registry-username $(az acr credential show -n $ACR_NAME --query username -o tsv) \
+            --registry-password $(az acr credential show -n $ACR_NAME --query passwords[0].value -o tsv)
 
       - name: Deploy frontend app
         run: |
@@ -63,7 +65,9 @@ jobs:
             --image $ACR_NAME.azurecr.io/frontend:latest \
             --target-port 8000 \
             --ingress external \
-            --registry-server $ACR_NAME.azurecr.io
+            --registry-server $ACR_NAME.azurecr.io \
+            --registry-username $(az acr credential show -n $ACR_NAME --query username -o tsv) \
+            --registry-password $(az acr credential show -n $ACR_NAME --query passwords[0].value -o tsv)
 
       - name: Deploy ollama app
         run: |
@@ -75,4 +79,5 @@ jobs:
             --target-port 11434 \
             --ingress external \
             --startup-command "/bin/sh -c 'ollama serve & sleep 5 && ollama pull mistral:latest && tail -f /dev/null'"
+
 
