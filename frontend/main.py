@@ -1,7 +1,8 @@
 import chainlit as cl
 import httpx 
+import os
 
-API_URL = "https://ia-backend.ashybeach-87c13459.eastus.azurecontainerapps.io/predict"
+API_URL = os.getenv("BACKEND_URL")
 
 @cl.on_message
 async def on_message(message: cl.Message):
