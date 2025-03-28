@@ -4,7 +4,7 @@ import httpx
 # from backend.app.ollama_client import OllamaClient
 # from backend.app.image_utils import image_to_base64
 
-API_URL = "http://127.0.0.1:8080/predict"  # URL del servidor FastAPI
+API_URL = "http://ia-backend.ashybeach-87c13459.eastus.azurecontainerapps.io/predict"  # URL del servidor FastAPI
 
 
 # @cl.on_chat_start
