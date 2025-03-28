@@ -3,11 +3,22 @@ from pydantic import BaseModel
 import torch
 import numpy as np
 
-from embeddings.embedding_store import EmbeddingStore  # 🔥 Importamos la búsqueda de contexto
+# ❌ FAISS desactivado temporalmente
+# print("✅ Importando EmbeddingStore...")
+# try:
+#     from embeddings.embedding_store import EmbeddingStore  # 🔥 Importamos la búsqueda de contexto
+#     print("✅ Importación de EmbeddingStore exitosa.")
+# except Exception as e:
+#     print(f"❌ Falló la importación de EmbeddingStore: {e}")
+#     EmbeddingStore = None
 
 # 🔧 Variables globales
 model, tokenizer, device = None, None, None
-store = EmbeddingStore()
+
+# ❌ FAISS desactivado temporalmente
+# print("✅ Instanciando store...")
+# store = EmbeddingStore() if EmbeddingStore else None
+# print("✅ Store instanciado.")
 
 app = FastAPI(title="Phi-2 API", description="API optimizada con GPU", version="4.2.0")
 
@@ -20,7 +31,6 @@ class MockModel:
         return "⚠️ Modo simulación. El modelo real no fue cargado."
 
 model = MockModel()
-
 
 # 🔄 Cargar modelo al iniciar
 @app.on_event("startup")
@@ -39,20 +49,16 @@ class InputData(BaseModel):
     input_text: str
 
 
+# 🛠️ FAISS desactivado temporalmente
 def es_pregunta_sobre_motores(pregunta):
     print(f"\n🔍 Pregunta recibida: {pregunta}")
-    results = store.search(pregunta)
-
-    if results:
-        print(f"✅ FAISS activado. Documentos relevantes: {len(results)}")
-        return results
-
-    print("❌ No hay documentos relevantes. Clasificando como pregunta general.")
+    print("❌ FAISS deshabilitado. Clasificando como pregunta general.")
     return []
 
 
 @app.get("/")
 def home():
+    print("🏠 Endpoint raíz llamado")
     return {"message": "API ejecutándose 🚀"}
 
 
@@ -99,5 +105,5 @@ async def predict(data: InputData):
     except Exception as e:
         response = {"message": f"❌ Error al generar respuesta: {str(e)}"}
 
-    print(response)
+    print(f"📤 Respuesta enviada: {response}")
     return response
